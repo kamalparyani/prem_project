@@ -130,6 +130,16 @@ app_license = "mit"
 # 	}
 # }
 
+
+doc_events = {
+    "Sales Order": {
+                "on_submit":"prem_project.custom_sales_order.create_project_based_on_template"
+                },
+    
+               
+}
+
+
 # Scheduled Tasks
 # ---------------
 
