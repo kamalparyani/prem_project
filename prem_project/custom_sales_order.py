@@ -79,7 +79,7 @@ def create_project_based_on_template(doctype, docname):
                     # Create a new Project based on the template for each item
                     project_doc = frappe.new_doc("Project")
                     project_doc.update({
-                        "project_name": sales_order_doc.name + "-" + item.item_code + "-Project",  # Customize as needed
+                        "project_name": sales_order_doc.get("transaction_date").strftime("%B") + "-" + item.item_code + "-Project"   # Customize as needed
                         "project_template": template_item,
                         "sales_order": sales_order_doc.name,  # Connect project to sales order
                         "customer": sales_order_doc.customer # connect customer to project
